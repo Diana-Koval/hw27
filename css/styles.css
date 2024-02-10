@@ -50,20 +50,53 @@ img {
 }
 .menu-wrapper {
   height: 100vh;
+  justify-content: center;
   display: flex;
   align-items: center;
   width: 50px;
   position: relative;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color:  rgb(121, 120, 120);
 }
 .menu-link {
   color: white;
   text-transform: uppercase;
   transform: rotate(90deg);
+  flex-shrink: 0;
+  padding: 20px 250px;
 }
 .menu-list {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgb(121, 120, 120);
   position: absolute;
-  top: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding:40px ;
+  transform: translateX(-100%);
+  transition: transform 500ms;
+}
+.menu-link:hover + .menu-list, .menu-list:hover {
+  transform: translateX(0);
+}
+.list-item {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+
+}
+.list-item::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: orange;
+  border-color: black;
+  border: black 2px solid;
+  transform: rotate(45deg);
+}
+.item-link {
+  transition: color 300ms ease-in;
+  padding: 0 10px;
+}
+.item-link:hover {
+  color: orange;
 }
